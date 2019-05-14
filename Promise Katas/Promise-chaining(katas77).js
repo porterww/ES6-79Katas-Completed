@@ -11,6 +11,7 @@ describe('chaining multiple promises can enhance readability', () => {
         const niceMessage = () => { new Error('I am nice')};
         return Promise.resolve('I am nice')
           //.then(beNice)
+          // or use async instead of cutting out that .then above^
           .then(niceMessage => assert.equal(niceMessage, 'I am nice'));
       });
     });
